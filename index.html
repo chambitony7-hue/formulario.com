@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contáctanos</title>
+<style>
+  body {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .card {
+    background: white;
+    width: 450px;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+  }
+  h2 {
+    text-align: center;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  label {
+    font-size: 13px;
+    color: #555;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+  }
+  input:focus, textarea:focus {
+    border-bottom: 2px solid #3b82f6;
+  }
+  textarea {
+    resize: none;
+    height: 60px;
+  }
+  .captcha {
+    margin-top: 35px;
+    border: 1px solid #d3d3d3;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    width: 250px;
+  }
+  .captcha-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .captcha-left input {
+    width: 20px;
+    height: 20px;
+  }
+  .captcha-right {
+    text-align: center;
+    font-size: 10px;
+    color: #555;
+  }
+  .btn {
+    margin-top: 20px;
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .btn:hover {
+    background: #2563eb;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Contáctanos</h2>
+  <form id="contact-form" action="procesar.php" method="POST">
+    
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="asunto">Asunto</label>
+    <input type="text" id="asunto" name="asunto" required>
+
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+
+    <!-- 2. AQUÍ METES TU CLAVE DE SITIO DE RECAPTCHA -->
+    <div class="captcha" style="margin: 15px 0;">
+      <div class="g-recaptcha" data-sitekey="6Ldsk_otAAAAAM-whGbOjs2MxzG4bmGzKpRLy6lg"></div>
+    </div>
+
+    <button class="btn" type="submit">Enviar</button>
+  </form>
+</div>
+
+</body>
